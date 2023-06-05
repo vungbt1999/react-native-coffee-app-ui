@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "extends": "@tsconfig/react-native/tsconfig.json"
+}
