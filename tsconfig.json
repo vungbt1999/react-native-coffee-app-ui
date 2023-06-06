@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "baseUrl": ".",
   },
   "extends": "@tsconfig/react-native/tsconfig.json"
 }
