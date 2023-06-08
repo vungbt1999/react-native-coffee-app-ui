@@ -8,9 +8,12 @@
 import React from 'react';
 
 import Navigation from './components/navigation';
+import { AuthProvider } from './hooks/auth/reducer';
 
 function App(): JSX.Element {
-  return <Navigation />;
+  return <AuthProvider>
+    <Navigation />
+  </AuthProvider>;
 }
 
 export default App;

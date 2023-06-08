@@ -9,5 +9,7 @@ export const Router = {
   Cart_Tab: 'Cart_Tab',
   Login: 'Login',
   Register: 'Register',
-  ForgotPassword: 'ForgotPassword'
+  ForgotPassword: 'ForgotPassword',
+  Profile: 'Profile',
+  ProtectedRoutes: 'ProtectedRoutes'
 };

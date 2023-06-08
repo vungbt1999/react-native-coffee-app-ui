@@ -13,17 +13,19 @@ import {
   ShoppingBagIcon as BagSolid
 } from 'react-native-heroicons/solid';
 import { themeColors } from '../../config';
+import { View } from 'react-native';
+import { useAuth } from '../../hooks';
 
 // Screen
 import ProductScreen from '../../screens/product';
 import HomeScreen from '../../screens/home';
 import FavoriteScreen from '../../screens/favorite';
 import CartScreen from '../../screens/cart';
-import { View } from 'react-native';
+import ProfileScreen from '../../screens/profile';
+import LoginScreen from '../../screens/auth/login';
 
+const Stack = createNativeStackNavigator();
 function Navigation(): JSX.Element {
-  const Stack = createNativeStackNavigator();
-
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -37,12 +39,15 @@ function Navigation(): JSX.Element {
           component={ProductScreen}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name={Router.Login} component={LoginScreen} />
         <Stack.Screen name={Router.Favorite} component={FavoriteScreen} />
         <Stack.Screen name={Router.Cart} component={CartScreen} />
+        <Stack.Screen name={Router.Profile} component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
 
 function MyTabs() {
   const Tab = createBottomTabNavigator();

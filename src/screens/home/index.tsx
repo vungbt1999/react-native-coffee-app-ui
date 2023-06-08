@@ -7,9 +7,12 @@ import { BellIcon } from 'react-native-heroicons/outline';
 import { categories, coffeeItems, themeColors } from '../../config';
 import Carousel from 'react-native-snap-carousel';
 import CoffeeCard from '../../components/coffee-card';
+import { useNavigation } from '@react-navigation/native';
+import { Router } from '../../constants';
 
 function HomeScreen(): JSX.Element {
   const [category, setCategory] = useState<number>(1);
+  const navigation = useNavigation();
 
   return (
     <View className="flex-1 relative bg-white">
@@ -21,10 +24,12 @@ function HomeScreen(): JSX.Element {
       />
       <SafeAreaView className="flex-1">
         <View className="px-4 flex-row justify-between items-center">
-          <Image
-            source={require('../../../assets/images/avatar.png')}
-            className="h-9 w-9 rounded-full"
-          />
+          <TouchableOpacity onPress={() => navigation.navigate(Router.Profile as never)}>
+            <Image
+              source={require('../../../assets/images/avatar.png')}
+              className="h-9 w-9 rounded-full"
+            />
+          </TouchableOpacity>
           <View className="flex-row items-center space-x-2">
             <MapPinIcon size="25" color={themeColors.bgLight} />
             <Text className="text-base font-semibold">New York, NYC</Text>
@@ -87,7 +92,7 @@ function HomeScreen(): JSX.Element {
           />
         </View>
       </SafeAreaView>
-    </View>
+    </View >
   );
 }
 
